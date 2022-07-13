@@ -1,0 +1,22 @@
+Projeto React and SpringBoot
+
+Comando para ccriar projeto React
+
+React vite - Ferramenta para auxiliar na criação de projetos
+
+Instalar o react via vite
+Criar um novo projeto no Spring Initializer
+Agrupar os dois projetos no mesmo diretório
+
+Criar o repositório no Git
+
+Inicializar o git localmente
+Adicionar todos os arquivos em stage
+Realizar o primeiro commit
+Definir o nome da branch como Main
+Adicionar o repositório remoto
+Fazer o primeiro push
+
+Para iniciar o servidor do projeto React -> yarn dev
+
+Limpar o projeto para remover todo o código que é criado durante a instalação
