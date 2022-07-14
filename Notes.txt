@@ -20,3 +20,36 @@ Fazer o primeiro push
 Para iniciar o servidor do projeto React -> yarn dev
 
 Limpar o projeto para remover todo o código que é criado durante a instalação
+
+Para o backend 
+Habilitar o cors configurando o webSecurity
+Usar o banco de dados H2 por não precisar de muita configuração e conseguir rodar em memória  
+Criar um arquivo chamado "import.sql" como seed para popular inicialmente o banco de dados
+
+Criar uma consulta com @Query (JPQL) para realizar a consulta de periodos
+
+
+Para o envio de SMS usamos o Twillo com as seguintes dependencias
+<dependency>
+	<groupId>com.twilio.sdk</groupId>
+	<artifactId>twilio</artifactId>
+	<version>8.31.1</version>
+</dependency>
+
+Criamos uma classe básica para o envio simples de SMS
+
+Para o deploy no heroku deve ter um aquivo de configuração na raiz do projeto com as configurações do serviço que iremos utilizar 
+
+system.properties
+
+java.runtime.version=17
+
+Para o deply no heroku, na raiz do diretório (após logar com o heroku cli - heroku login)
+
+heroku git:remote -a <nome do app> (nome do app criado previamente no heroku)
+
+git remote -v deve agora mostrar o heroku como um dos remotes disponíveis para a aplicação
+
+git subtree push --prefix backend heroku main
+
+Com o push feito para o heroku o deploy já será iniciado
