@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import icon from '../../assets/img/notification-icon.svg'
 import { sendNotification } from '../../services/saleService';
 
@@ -20,7 +21,7 @@ export default NotificationButton
 function _sendNotification(id: number): void {
   sendNotification(id).then(
     r=>{
-      console.log('Sucesso ', r);
+      toast.info('SMS enviado com sucesso.');
     }
   )
 }
