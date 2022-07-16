@@ -4,9 +4,8 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 import './styles.css'
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { BASE_URL } from '../../utils/request';
 import { Sale } from '../../models/sale';
+import { getSales } from '../../services/saleService';
 
 function SalesCard() {
 
@@ -19,16 +18,15 @@ function SalesCard() {
   const [sales, setSales] = useState<Sale[]>([]);
 
   useEffect(() => {
-    axios.get(BASE_URL + "/sales").then(
-      response => {
-        setSales(response.data.content)
-      }
-    ).catch(
-      err => {
-        console.error(err)
-      }
-    )
-  }, []);
+
+    const dmin = minDate.toISOString().slice(0,10);
+    const dmax = maxDate.toISOString().slice(0,10);
+
+    getSales(dmin,dmax).then((r)=>{
+        setSales(r.data.content)
+    })
+
+  }, [minDate, maxDate]);
 
   return (
     <div className="card">
@@ -77,7 +75,7 @@ function SalesCard() {
                   <td>R$ {sale.amount.toFixed(2)}</td>
                   <td>
                     <div className="red-btn-container">
-                      <NotificationButton />
+                      <NotificationButton saleId={sale.id} />
                     </div>
                   </td>
                 </tr>
