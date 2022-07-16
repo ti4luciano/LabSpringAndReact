@@ -53,3 +53,7 @@ git remote -v deve agora mostrar o heroku como um dos remotes disponíveis para 
 git subtree push --prefix backend heroku main
 
 Com o push feito para o heroku o deploy já será iniciado
+
+
+
+yarn add axios@0.27.2
